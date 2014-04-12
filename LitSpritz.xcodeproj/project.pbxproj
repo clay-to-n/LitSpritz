@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		013543FA18F949D800326098 /* LewisCarrollThroughTheLookingGlass.txt in Resources */ = {isa = PBXBuildFile; fileRef = 013543F918F949D800326098 /* LewisCarrollThroughTheLookingGlass.txt */; };
 		0171B6DE18F9DD14006340A2 /* USCBooksLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 0171B6DD18F9DD14006340A2 /* USCBooksLibrary.m */; };
 		0171B6E118F9E131006340A2 /* USCBookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0171B6E018F9E131006340A2 /* USCBookModel.m */; };
 		0171B6E718F9E35B006340A2 /* AutoCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 0171B6E618F9E35B006340A2 /* AutoCoding.m */; };
+		0171B6EA18F9EC03006340A2 /* LewisCarrollThroughTheLookingGlass.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0171B6E918F9EC03006340A2 /* LewisCarrollThroughTheLookingGlass.txt */; };
 		01C7493918F980B6000D82BA /* USCBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C7493818F980B6000D82BA /* USCBookViewController.m */; };
 		01C7493C18F98462000D82BA /* USCBookListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C7493B18F98462000D82BA /* USCBookListViewController.m */; };
 		9F822A4FDBE04B42AD614B2A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F0F73F168DA48F09767ECB8 /* libPods.a */; };
@@ -26,13 +26,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		013543F918F949D800326098 /* LewisCarrollThroughTheLookingGlass.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LewisCarrollThroughTheLookingGlass.txt; sourceTree = "<group>"; };
 		0171B6DC18F9DD14006340A2 /* USCBooksLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USCBooksLibrary.h; sourceTree = "<group>"; };
 		0171B6DD18F9DD14006340A2 /* USCBooksLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USCBooksLibrary.m; sourceTree = "<group>"; };
 		0171B6DF18F9E131006340A2 /* USCBookModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USCBookModel.h; sourceTree = "<group>"; };
 		0171B6E018F9E131006340A2 /* USCBookModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USCBookModel.m; sourceTree = "<group>"; };
 		0171B6E518F9E35B006340A2 /* AutoCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AutoCoding.h; path = Libraries/AutoCoding/AutoCoding.h; sourceTree = "<group>"; };
 		0171B6E618F9E35B006340A2 /* AutoCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AutoCoding.m; path = Libraries/AutoCoding/AutoCoding.m; sourceTree = "<group>"; };
+		0171B6E918F9EC03006340A2 /* LewisCarrollThroughTheLookingGlass.txt */ = {isa = PBXFileReference; lastKnownFileType = file; name = LewisCarrollThroughTheLookingGlass.txt; path = Books/LewisCarrollThroughTheLookingGlass.txt; sourceTree = "<group>"; };
 		01C7493718F980B6000D82BA /* USCBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USCBookViewController.h; sourceTree = "<group>"; };
 		01C7493818F980B6000D82BA /* USCBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USCBookViewController.m; sourceTree = "<group>"; };
 		01C7493A18F98462000D82BA /* USCBookListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USCBookListViewController.h; sourceTree = "<group>"; };
@@ -70,10 +70,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		013543F818F9499E00326098 /* Books */ = {
+		0171B6E818F9EBE9006340A2 /* Books */ = {
 			isa = PBXGroup;
 			children = (
-				013543F918F949D800326098 /* LewisCarrollThroughTheLookingGlass.txt */,
+				0171B6E918F9EC03006340A2 /* LewisCarrollThroughTheLookingGlass.txt */,
 			);
 			name = Books;
 			sourceTree = "<group>";
@@ -110,7 +110,6 @@
 		D4231DE418F66D02000BB5B3 /* LitSpritz */ = {
 			isa = PBXGroup;
 			children = (
-				013543F818F9499E00326098 /* Books */,
 				D4231DED18F66D02000BB5B3 /* AppDelegate.h */,
 				D4231DEE18F66D02000BB5B3 /* AppDelegate.m */,
 				01C7493A18F98462000D82BA /* USCBookListViewController.h */,
@@ -120,6 +119,7 @@
 				D4231DF018F66D02000BB5B3 /* Main.storyboard */,
 				D4231DF318F66D02000BB5B3 /* ViewController.h */,
 				D4231DF418F66D02000BB5B3 /* ViewController.m */,
+				0171B6E818F9EBE9006340A2 /* Books */,
 				D4231DF618F66D02000BB5B3 /* Images.xcassets */,
 				0171B6DC18F9DD14006340A2 /* USCBooksLibrary.h */,
 				0171B6DD18F9DD14006340A2 /* USCBooksLibrary.m */,
@@ -199,7 +199,7 @@
 			files = (
 				D4231DF718F66D02000BB5B3 /* Images.xcassets in Resources */,
 				D4231DE918F66D02000BB5B3 /* InfoPlist.strings in Resources */,
-				013543FA18F949D800326098 /* LewisCarrollThroughTheLookingGlass.txt in Resources */,
+				0171B6EA18F9EC03006340A2 /* LewisCarrollThroughTheLookingGlass.txt in Resources */,
 				D4231DF218F66D02000BB5B3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

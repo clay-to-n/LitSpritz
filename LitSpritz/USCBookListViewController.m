@@ -7,14 +7,18 @@
 //
 
 #import "USCBookListViewController.h"
+#import "AutoCoding.h"
+#import "USCBooksLibrary.h"
 
 @interface USCBookListViewController ()
 
-
+@property (strong, nonatomic) USCBooksLibrary *library;
 
 @end
 
 @implementation USCBookListViewController
+
+NSString *persistencePath = @"weee";
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
@@ -22,6 +26,14 @@
     
     if (self) {
         self.books = [NSMutableArray arrayWithObject:@"Book Title"];
+        self.library = [USCBooksLibrary objectWithContentsOfFile:persistencePath];
+        if (!self.library) {
+            self.library = [[USCBooksLibrary alloc] init];
+            
+            USCBookModel throughTheLookingGlass = 
+            [self.library insertBook:<#(USCBookModel *)#> atIndex:0];
+        }
+        
     }
     
     return self;
@@ -65,6 +77,10 @@
     cell.textLabel.text = self.books[indexPath.row];
     
     return cell;
+}
+
+- (void) save {
+    [self.library writeToFile:persistencePath atomically:TRUE];
 }
 
 /*
