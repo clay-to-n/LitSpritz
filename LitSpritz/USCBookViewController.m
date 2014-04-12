@@ -7,10 +7,12 @@
 //
 
 #import "USCBookViewController.h"
+#import <Spritz-SDK/SpritzSDK.h>
 
 @interface USCBookViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *bookTitleDisplay;
+@property (weak, nonatomic) IBOutlet SpritzInlineView *spritzInlineView;
 
 @end
 

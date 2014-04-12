@@ -134,7 +134,7 @@
                     </view>
                     <connections>
                         <outlet property="bookTitleDisplay" destination="PUF-pP-KsB" id="Fg8-0Y-rlK"/>
-                        <outlet property="view" destination="PUF-pP-KsB" id="1Rh-gB-5t0"/>
+                        <outlet property="spritzInlineView" destination="NJ4-BE-qxd" id="NiG-ZA-KIF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ePQ-OD-hsA" userLabel="First Responder" sceneMemberID="firstResponder"/>
