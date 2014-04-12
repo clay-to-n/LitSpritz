@@ -8,8 +8,9 @@
 
 #import "USCBookViewController.h"
 #import <Spritz-SDK/SpritzSDK.h>
+#import <Spritz-SDK/SpritzController.h>
 
-@interface USCBookViewController ()
+@interface USCBookViewController () <SpritzControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *bookTitleDisplay;
 
@@ -33,6 +34,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self.bookTitleDisplay setText:@"Huck Finn"];
+    [self.spritzInlineView addSpritzControllerDelegate:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,7 +54,35 @@
         
         NSLog(@"%@", stringFromFileAtPath);
         [self.spritzInlineView startSpritzing:stringFromFileAtPath sourceType:SourceFlagPlain];
+    
+    
+    /*    SpritzViewController *spritzVC = [[SpritzViewController alloc] init];
+        [self presentViewController:spritzVC animated:YES completion:^{
+            [spritzVC startSpritzing:stringFromFileAtPath sourceType:SourceFlagPlain];
+        }];  */
 
+}
+
+- (void)onStart:(int)charPos wordPos:(int)wordPos timePos:(float)timePos speed:(int)speed {
+    
+}
+- (void)onPause:(int)charPos wordPos:(int)wordPos timePos:(float)timePos speed:(int)speed {
+    
+}
+- (void)onResume:(int)charPos wordPos:(int)wordPos timePos:(float)timePos speed:(int)speed {
+    
+}
+- (void)onStop:(int)charPos wordPos:(int)wordPos timePos:(float)timePos speed:(int)speed {
+    
+}
+- (void)onGoBackASentence:(int)charPos wordPos:(int)wordPos timePos:(float)timePos speed:(int)speed {
+    
+}
+- (void)onGoBackToStart:(int)charPos wordPos:(int)wordPos timePos:(float)timePos speed:(int)speed {
+    
+}
+- (void)onCompleted:(int)charPos wordPos:(int)wordPos timePos:(float)timePos speed:(int)speed {
+    
 }
 
 @end
