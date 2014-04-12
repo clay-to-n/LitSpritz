@@ -107,6 +107,9 @@
                                 <color key="backgroundColor" red="0.79568614130434789" green="0.79568614130434789" blue="0.79568614130434789" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Play"/>
                                 <state key="selected" title="Play"/>
+                                <connections>
+                                    <action selector="startOrStopSpritz:" destination="Z3s-T8-nhL" eventType="touchUpInside" id="PMc-wN-UwR"/>
+                                </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="59a-Pk-gUa">
                                 <rect key="frame" x="90" y="338" width="212" height="34"/>
