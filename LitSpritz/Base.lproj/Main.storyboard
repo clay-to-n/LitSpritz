@@ -52,7 +52,7 @@
             </objects>
             <point key="canvasLocation" x="-311" y="1416"/>
         </scene>
-        <!--Book List View Controller-->
+        <!--Book List View Controller - Library-->
         <scene sceneID="324-OX-qxX">
             <objects>
                 <tableViewController id="T3z-vx-hBB" customClass="USCBookListViewController" sceneMemberID="viewController">
@@ -79,7 +79,7 @@
                             <outlet property="delegate" destination="T3z-vx-hBB" id="pCN-Qb-5yW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="d58-Ww-GGt"/>
+                    <navigationItem key="navigationItem" title="Library" id="d58-Ww-GGt"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y1R-xP-bgb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -236,10 +236,10 @@
             </objects>
             <point key="canvasLocation" x="1886" y="1097"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation Controller - Library-->
         <scene sceneID="GaV-vb-y7D">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LhS-zQ-uO2" sceneMemberID="viewController">
+                <navigationController title="Library" automaticallyAdjustsScrollViewInsets="NO" id="LhS-zQ-uO2" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Axu-pb-WOY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

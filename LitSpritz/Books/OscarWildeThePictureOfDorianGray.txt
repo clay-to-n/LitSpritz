@@ -1,38 +1,3 @@
-The Project Gutenberg EBook of The Picture of Dorian Gray, by Oscar Wilde
-
-This eBook is for the use of anyone anywhere at no cost and with
-almost no restrictions whatsoever.  You may copy it, give it away or
-re-use it under the terms of the Project Gutenberg License included
-with this eBook or online at www.gutenberg.net
-
-
-Title: The Picture of Dorian Gray
-
-Author: Oscar Wilde
-
-Release Date: June 9, 2008 [EBook #174]
-[This file last updated on July 2, 2011]
-
-
-Language: English
-
-
-*** START OF THIS PROJECT GUTENBERG EBOOK THE PICTURE OF DORIAN GRAY ***
-
-
-
-
-Produced by Judith Boss.  HTML version by Al Haines.
-
-
-
-
-
-
-
-
-
-
 The Picture of Dorian Gray
 
 by
@@ -42,7 +7,7 @@ Oscar Wilde
 
 
 
-THE PREFACE
+CHAPTER 0 THE PREFACE
 
 The artist is the creator of beautiful things.  To reveal art and
 conceal the artist is art's aim.  The critic is he who can translate
