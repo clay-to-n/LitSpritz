@@ -17,12 +17,14 @@
 @property (weak, nonatomic) IBOutlet UISlider *speedSlider;
 
 - (IBAction)sliderValueChanged:(id)sender;
+- (IBAction)backButtonPressed:(id)sender;
 
 @end
 
 @implementation USCBookViewController {
 
     BOOL isPaused;
+    SpritzController *sc;
     
 }
 
@@ -67,14 +69,14 @@
         
         NSLog(@"%@", stringFromFileAtPath);*/
     
-        SpritzController *c = [self.spritzInlineView valueForKey:@"_spritzController"];
+        sc = [self.spritzInlineView valueForKey:@"_spritzController"];
     
-        if (!c.started) {
-            NSString *bookText = [self.book getString];
+        if (!sc.started) {
+            NSString *bookText = [self getStringStartingWithIndex:self.book.currentPosition];
             [self.spritzInlineView startSpritzing:bookText sourceType:SourceFlagPlain];
         }
         else {
-            [c togglePause];
+            [sc togglePause];
         }
 }
 
@@ -82,12 +84,38 @@
     [SpritzDataStore sharedStore].userSettings.wordsPerMinute = [self.speedSlider value];
 }
 
+- (IBAction)backButtonPressed:(id)sender {
+    sc = [self.spritzInlineView valueForKey:@"_spritzController"];
+    //[sc goBackASentence];
+     
+    //[self goToCharWithIndex:100];
+}
+
+- (NSString*)getStringStartingWithIndex:(int)index {
+    NSString *string = [self.book getString];
+    NSString *newString = [string substringWithRange:NSMakeRange(index, [string length]-index)];
+    return newString;
+}
+
 - (void)onStart:(int)charPos wordPos:(int)wordPos timePos:(float)timePos speed:(int)speed {
     
 }
 - (void)onPause:(int)charPos wordPos:(int)wordPos timePos:(float)timePos speed:(int)speed {
     
+    // when we pause, we must save our current position for the book
+    
+    NSArray *strings = [[self.book getString] componentsSeparatedByString:@" "];
+    NSUInteger sum = 0;
+    for (int i =0; i < wordPos; i++) {
+        sum += [[strings objectAtIndex:i] length];
+    }
+    sum = sum + wordPos - 1;
+
+    self.book.currentPosition = sum;
+    
+    [self.delegate onPauseDelegation];
 }
+
 - (void)onResume:(int)charPos wordPos:(int)wordPos timePos:(float)timePos speed:(int)speed {
     
 }
@@ -104,4 +132,22 @@
     
 }
 
+
 @end
+
+
+
+/*
+ 
+ 
+ so on pause
+ [self.book.string componentsSeperatedByStrings:@" "];
+ NSUInteger sum = 0;
+ for (int i =0; i < wordPos; i++) {
+    sum += [[strings objectAtIndex:i] length];
+ }
+ sum = sum + wordPos - 1;
+ position is charPos
+ 
+ 
+ */

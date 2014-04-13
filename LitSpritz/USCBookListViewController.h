@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "USCBookViewController.h"
 
 @interface USCBookListViewController : UITableViewController
-
 
 @end

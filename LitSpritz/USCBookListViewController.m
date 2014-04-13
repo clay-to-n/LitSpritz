@@ -11,7 +11,9 @@
 #import "AutoCoding.h"
 #import "USCBooksLibrary.h"
 
-@interface USCBookListViewController ()
+
+
+@interface USCBookListViewController () <USCBookViewControllerDelegate>
 
 @property (strong, nonatomic) USCBooksLibrary *library;
 
@@ -56,7 +58,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -150,6 +151,8 @@
     USCBookViewController *bookView = [segue destinationViewController];
     if ([[segue identifier] isEqualToString: @"bookDetail"]) {
         if ([[segue destinationViewController] isKindOfClass: [USCBookViewController class]]) {
+            USCBookViewController *vc = segue.destinationViewController;
+            vc.delegate = self;
             NSIndexPath *indexPath = [[self tableView] indexPathForSelectedRow];
            // UITableViewCell *cell = (UITableViewCell *)sender;
             int index = indexPath.row;
@@ -159,6 +162,10 @@
         }
 
     }
+}
+
+- (void) onPauseDelegation{
+    [self save];
 }
 
 

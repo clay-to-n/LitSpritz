@@ -9,8 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "USCBookModel.h"
 
+@protocol USCBookViewControllerDelegate <NSObject>
+- (void)onPauseDelegation;
+@end
+
 @interface USCBookViewController : UIViewController
+
+@property (nonatomic, weak) id <USCBookViewControllerDelegate>delegate;
 
 @property (strong, nonatomic) NSString* bookTitle;
 @property USCBookModel* book;
+
+- (NSString*)getStringStartingWithIndex:(int)index;
+
 @end
