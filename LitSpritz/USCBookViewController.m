@@ -14,6 +14,9 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *bookTitleDisplay;
 @property (weak, nonatomic) IBOutlet SpritzInlineView *spritzInlineView;
+@property (weak, nonatomic) IBOutlet UISlider *speedSlider;
+
+- (IBAction)sliderValueChanged:(id)sender;
 
 @end
 
@@ -35,6 +38,19 @@
     if (self.book) {
         [self.bookTitleDisplay setText:[self.book title]];
         [self.spritzInlineView addSpritzControllerDelegate:self];
+        
+        [self.speedSlider setValue:[SpritzDataStore sharedStore].userSettings.wordsPerMinute];
+        
+        /*SpritzController *c = [self.spritzInlineView valueForKey:@"_spritzController"];
+        if (c.isPaused) {
+            
+        }*/
+        
+        // current word speed
+        //[SpritzDataStore sharedStore].userSettings.wordsPerMinute;
+        
+        // change the word speed
+        
     }
 }
 
@@ -64,6 +80,10 @@
             [spritzVC startSpritzing:stringFromFileAtPath sourceType:SourceFlagPlain];
         }];  */
 
+}
+
+- (IBAction)sliderValueChanged:(id)sender {
+    [SpritzDataStore sharedStore].userSettings.wordsPerMinute = [self.speedSlider value];
 }
 
 - (void)onStart:(int)charPos wordPos:(int)wordPos timePos:(float)timePos speed:(int)speed {
