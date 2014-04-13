@@ -68,6 +68,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <color key="tintColor" red="0.66666666669999997" green="0.0" blue="0.093632989129999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="Z3s-T8-nhL" kind="push" identifier="bookDetail" id="lhG-j2-k06"/>
                                 </connections>
@@ -122,7 +123,7 @@
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="200" minValue="25" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="59a-Pk-gUa">
                                 <rect key="frame" x="90" y="282" width="212" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="minimumTrackTintColor" red="0.66666666666666663" green="0.0" blue="0.093632989127563349" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="minimumTrackTintColor" red="0.66666666669999997" green="0.0" blue="0.093632989129999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="sliderValueChanged:" destination="Z3s-T8-nhL" eventType="valueChanged" id="MI5-ET-An1"/>
                                 </connections>
@@ -155,6 +156,7 @@
                                         </connections>
                                     </barButtonItem>
                                 </items>
+                                <color key="tintColor" red="0.66666666669999997" green="0.0" blue="0.093632989129999997" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQS-Dp-BzC">
                                 <rect key="frame" x="27" y="147" width="39" height="30"/>
@@ -179,6 +181,10 @@
                     <navigationItem key="navigationItem" id="a2e-DJ-Vu3"/>
                     <connections>
                         <outlet property="bookTitleDisplay" destination="PUF-pP-KsB" id="Fg8-0Y-rlK"/>
+                        <outlet property="bookmarksButton" destination="ey7-1X-m9b" id="oCr-Sj-Ovc"/>
+                        <outlet property="chaptersButton" destination="5fI-DV-c3r" id="8ql-8E-Mme"/>
+                        <outlet property="lastSentenceButton" destination="eQS-Dp-BzC" id="VUZ-Ic-BIP"/>
+                        <outlet property="navigationItem" destination="a2e-DJ-Vu3" id="uth-4E-E4Q"/>
                         <outlet property="speedSlider" destination="59a-Pk-gUa" id="3mR-cD-CPz"/>
                         <outlet property="spritzInlineView" destination="NJ4-BE-qxd" id="NiG-ZA-KIF"/>
                     </connections>

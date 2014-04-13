@@ -15,6 +15,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *bookTitleDisplay;
 @property (weak, nonatomic) IBOutlet SpritzInlineView *spritzInlineView;
 @property (weak, nonatomic) IBOutlet UISlider *speedSlider;
+@property (weak, nonatomic) IBOutlet UIButton *lastSentenceButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *chaptersButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *bookmarksButton;
 
 - (IBAction)sliderValueChanged:(id)sender;
 - (IBAction)backButtonPressed:(id)sender;
@@ -25,6 +28,7 @@
 
     BOOL isPaused;
     SpritzController *sc;
+    UIColor* trojanRed;
     
 }
 
@@ -48,6 +52,9 @@
         [self.spritzInlineView addSpritzControllerDelegate:self];
         
         [self.speedSlider setValue:[SpritzDataStore sharedStore].userSettings.wordsPerMinute];
+        trojanRed = [self.speedSlider minimumTrackTintColor];
+        self.navigationController.navigationBar.tintColor = trojanRed;
+
     }
 }
 
@@ -69,24 +76,48 @@
         
         NSLog(@"%@", stringFromFileAtPath);*/
     
-        sc = [self.spritzInlineView valueForKey:@"_spritzController"];
+    sc = [self.spritzInlineView valueForKey:@"_spritzController"];
     
-        if (!sc.started) {
-            NSString *bookText = [self getStringStartingWithIndex:self.book.currentPosition];
-            [self.spritzInlineView startSpritzing:bookText sourceType:SourceFlagPlain];
-        }
-        else {
-            [sc togglePause];
-        }
+    if (!sc.started) {
+        NSString *bookText = [self getStringStartingWithIndex:self.book.currentPosition];
+        [self.spritzInlineView startSpritzing:bookText sourceType:SourceFlagPlain];
+    }
+    else {
+        [sc togglePause];
+    }
     
-        // when we pause, we should switch the button icon
-        UIButton *theButton = (UIButton*)sender;
-        if (isPaused == NO) {
-            [theButton setImage:[UIImage imageNamed:@"pauseSmall.png"] forState:UIControlStateNormal];
-        } else {
-            [theButton setImage:[UIImage imageNamed:@"playSmall.png"] forState:UIControlStateNormal];
-        }
-        isPaused = !isPaused;
+    // when we pause, we should switch the button icon
+    UIButton *theButton = (UIButton*)sender;
+    if (isPaused == NO) {
+        [theButton setImage:[UIImage imageNamed:@"pauseSmall.png"] forState:UIControlStateNormal];
+    } else {
+        [theButton setImage:[UIImage imageNamed:@"playSmall.png"] forState:UIControlStateNormal];
+    }
+    isPaused = !isPaused;
+    
+    // when we play, we should fade out the title and colors
+    if (isPaused == YES) {
+        [UIView animateWithDuration:2.4 animations:^{
+            self.bookTitleDisplay.alpha = 0;
+            self.speedSlider.minimumTrackTintColor = [UIColor grayColor];
+            self.navigationController.navigationBar.tintColor =[UIColor grayColor];
+            [self.lastSentenceButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+            self.bookmarksButton.tintColor = [UIColor grayColor];
+            self.chaptersButton.tintColor = [UIColor grayColor];
+        }completion:^(BOOL finished) {
+                    }];
+    } else {
+        [UIView animateWithDuration:1.0 animations:^{
+            self.bookTitleDisplay.alpha = 1;
+            self.speedSlider.minimumTrackTintColor = trojanRed;
+            self.navigationController.navigationBar.tintColor = trojanRed;
+            [self.lastSentenceButton setTitleColor:trojanRed forState:UIControlStateNormal];
+            self.bookmarksButton.tintColor = trojanRed;
+            self.chaptersButton.tintColor = trojanRed;
+        }completion:^(BOOL finished) {
+            
+        }];
+    }
     
 }
 
@@ -105,6 +136,25 @@
     NSString *string = [self.book getString];
     NSString *newString = [string substringWithRange:NSMakeRange(index, [string length]-index)];
     return newString;
+}
+
+// Functions to display the answer with an animation
+-(void)animatePlay {
+    
+   /* self.bookTitleDisplay.alpha = 0;
+    [UIView animateWithDuration:1.0 animations:^{
+        if (self.bookTitleDisplay.textColor == UIColor.whiteColor) {
+            self.bookTitleDisplay.textColor = [UIColor
+                                          colorWithRed:(153.0f / 255.0f)
+                                          green:0.0
+                                          blue:0.0
+                                          alpha:1.0];
+        } else {
+            self.bookTitleDisplay.textColor = UIColor.whiteColor;
+        }
+        
+        self.bookTitleDisplay.alpha = 1;
+    } ];*/
 }
 
 - (void)onStart:(int)charPos wordPos:(int)wordPos timePos:(float)timePos speed:(int)speed {
