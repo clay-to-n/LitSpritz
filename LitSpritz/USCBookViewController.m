@@ -7,6 +7,7 @@
 //
 
 #import "USCBookViewController.h"
+#import "USCChaptersViewController.h"
 #import <Spritz-SDK/SpritzSDK.h>
 #import <Spritz-SDK/SpritzController.h>
 
@@ -83,7 +84,9 @@
         [self.spritzInlineView startSpritzing:bookText sourceType:SourceFlagPlain];
     }
     else {
-        [sc togglePause];
+        if (isPaused)
+            [sc pause];
+        else [sc resume];
     }
     
     // when we pause, we should switch the button icon
@@ -127,8 +130,15 @@
 
 - (IBAction)backButtonPressed:(id)sender {
     sc = [self.spritzInlineView valueForKey:@"_spritzController"];
-    //[sc goBackASentence];
-     
+    if (!isPaused) {
+        [sc goBackASentence];
+        [sc pause];
+    } else {
+        /*[sc pause];
+        [sc goBackASentence];
+        [sc resume];*/
+    }
+    
     //[self goToCharWithIndex:100];
 }
 
@@ -138,23 +148,17 @@
     return newString;
 }
 
-// Functions to display the answer with an animation
--(void)animatePlay {
-    
-   /* self.bookTitleDisplay.alpha = 0;
-    [UIView animateWithDuration:1.0 animations:^{
-        if (self.bookTitleDisplay.textColor == UIColor.whiteColor) {
-            self.bookTitleDisplay.textColor = [UIColor
-                                          colorWithRed:(153.0f / 255.0f)
-                                          green:0.0
-                                          blue:0.0
-                                          alpha:1.0];
-        } else {
-            self.bookTitleDisplay.textColor = UIColor.whiteColor;
-        }
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    //USCChaptersViewController *chaptersView = [segue destinationViewController];
+    if ([[segue identifier] isEqualToString: @"chaptersSegue"]) {
+        UINavigationController *navController = [segue destinationViewController];
+        USCChaptersViewController *vc = navController.viewControllers[0];
+        vc.book = self.book;
         
-        self.bookTitleDisplay.alpha = 1;
-    } ];*/
+    }
 }
 
 - (void)onStart:(int)charPos wordPos:(int)wordPos timePos:(float)timePos speed:(int)speed {

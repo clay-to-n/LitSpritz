@@ -10,8 +10,6 @@
 
 @interface USCChaptersViewController ()
 
-@property(strong, nonatomic) NSMutableArray* chapters;
-
 @end
 
 @implementation USCChaptersViewController
@@ -28,6 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"ChapterCell"];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -53,15 +52,20 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.chapters count];
+    return [self.book.chapterPositions count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+
+    NSArray *keys = [self.book.chapterPositions allKeys];
+    id aKey = [keys objectAtIndex:indexPath.row];
+    id anObject = [self.book.chapterPositions objectForKey:aKey];
     
     // Configure the cell...
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ChapterCell" forIndexPath:indexPath];
+    cell.textLabel.text = [[NSString alloc] initWithFormat:@"Chapter %d",indexPath.row];
     
     return cell;
 }

@@ -216,7 +216,6 @@
         <!--Bookmarks View Controller - Bookmarks-->
         <scene sceneID="C1p-my-dOp">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="s2W-7V-OsP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="maK-kQ-Moe" customClass="USCBookmarksViewController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Bookmarks" id="dKR-sU-EM7">
@@ -233,6 +232,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s2W-7V-OsP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1886" y="1097"/>
         </scene>

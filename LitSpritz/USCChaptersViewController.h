@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "USCBookModel.h"
 
 @interface USCChaptersViewController : UITableViewController
+
+@property USCBookModel* book;
 
 @end
