@@ -7,6 +7,7 @@
 //
 
 #import "USCBookListViewController.h"
+#import "USCBookViewController.h"
 #import "AutoCoding.h"
 #import "USCBooksLibrary.h"
 
@@ -18,20 +19,21 @@
 
 @implementation USCBookListViewController
 
-NSString *persistencePath = @"weee";
+NSString *persistencePath = @"LitSpritzLibrary";
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
     
     if (self) {
-        self.books = [NSMutableArray arrayWithObject:@"Book Title"];
         self.library = [USCBooksLibrary objectWithContentsOfFile:persistencePath];
         if (!self.library) {
             self.library = [[USCBooksLibrary alloc] init];
             
-            USCBookModel throughTheLookingGlass = 
-            [self.library insertBook:<#(USCBookModel *)#> atIndex:0];
+            USCBookModel *throughTheLookingGlass = [[USCBookModel alloc] initWithTitle:@"Through The Looking Glass" andFileName:[[NSBundle mainBundle] pathForResource:@"LewisCarrollThroughTheLookingGlass" ofType:@"txt"]];
+        
+            [self.library insertBook:throughTheLookingGlass atIndex:0];
+            [self save];
         }
         
     }
@@ -67,14 +69,14 @@ NSString *persistencePath = @"weee";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.books count];
+    return [self.library numberOfBooks];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Configure the cell...
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BookCell" forIndexPath:indexPath];
-    cell.textLabel.text = self.books[indexPath.row];
+    cell.textLabel.text = [[self.library bookAtIndex:indexPath.row] title];
     
     return cell;
 }
@@ -122,16 +124,30 @@ NSString *persistencePath = @"weee";
 }
 */
 
-/*
+/*- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"bookDetail" sender:[self.library bookAtIndex:[indexPath row]]];
+}*/
+
 #pragma mark - Navigation
 
 // In a story board-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    // Get the new view controller using
+    
+    USCBookViewController *bookView = [segue destinationViewController];
+    if ([[segue identifier] isEqualToString: @"bookDetail"]) {
+        if ([[segue destinationViewController] isKindOfClass: [USCBookViewController class]]) {
+            NSIndexPath *indexPath = [[self tableView] indexPathForSelectedRow];
+           // UITableViewCell *cell = (UITableViewCell *)sender;
+            int index = indexPath.row;
+            [bookView setBook:[self.library bookAtIndex:index]];
+            // Now send this index to my bookviewcontroller so it knows what's up
+            
+        }
+
+    }
 }
 
- */
 
 @end

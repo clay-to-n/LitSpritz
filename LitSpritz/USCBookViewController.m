@@ -13,7 +13,6 @@
 @interface USCBookViewController () <SpritzControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *bookTitleDisplay;
-
 @property (weak, nonatomic) IBOutlet SpritzInlineView *spritzInlineView;
 
 @end
@@ -33,8 +32,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [self.bookTitleDisplay setText:@"Huck Finn"];
-    [self.spritzInlineView addSpritzControllerDelegate:self];
+    if (self.book) {
+        [self.bookTitleDisplay setText:[self.book title]];
+        [self.spritzInlineView addSpritzControllerDelegate:self];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,18 +43,20 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 - (IBAction)startOrStopSpritz:(id)sender {
     
         //The SpritzInlineView class is a UIView subclass that can be inititated from a UIStoryboard. The startSpritzing method starts spritzing the passed in URL.
         
         // Let's load a file
-        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"LewisCarrollThroughTheLookingGlass" ofType:@"txt"];
+        //NSString *filePath = [[NSBundle mainBundle] pathForResource:[self.book fileName] ofType:@"txt"];
         
         // Let's make it a string
-        NSString *stringFromFileAtPath = [[NSString alloc]initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+       /* NSString *stringFromFileAtPath = [[NSString alloc]initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
         
-        NSLog(@"%@", stringFromFileAtPath);
-        [self.spritzInlineView startSpritzing:stringFromFileAtPath sourceType:SourceFlagPlain];
+        NSLog(@"%@", stringFromFileAtPath);*/
+        NSString *bookText = [self.book getString];
+        [self.spritzInlineView startSpritzing:bookText sourceType:SourceFlagPlain];
     
     
     /*    SpritzViewController *spritzVC = [[SpritzViewController alloc] init];

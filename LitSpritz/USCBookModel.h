@@ -18,5 +18,5 @@
 @property (strong, nonatomic) NSDate *lastRead;
 
 -(id) initWithTitle: (NSString *) title andFileName: (NSString *) fileName;
-
+-(NSString *) getString;
 @end

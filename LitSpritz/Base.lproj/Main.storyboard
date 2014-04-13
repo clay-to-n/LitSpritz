@@ -69,7 +69,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Z3s-T8-nhL" kind="push" id="lhG-j2-k06"/>
+                                    <segue destination="Z3s-T8-nhL" kind="push" identifier="bookDetail" id="lhG-j2-k06"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

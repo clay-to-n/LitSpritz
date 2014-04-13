@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "USCBookModel.h"
 
 @interface USCBookViewController : UIViewController
 
 @property (strong, nonatomic) NSString* bookTitle;
-
+@property USCBookModel* book;
 @end

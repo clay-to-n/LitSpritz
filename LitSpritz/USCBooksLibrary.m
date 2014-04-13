@@ -26,9 +26,7 @@ NSString *const SecretAnswer = @"Secret Answer";
 -(id) init {
     self = [super init];
     if (self) {
-        
-        
-        
+        self.books = [[NSMutableArray alloc] init];
     }
     return self;
 }

@@ -10,6 +10,5 @@
 
 @interface USCBookListViewController : UITableViewController
 
-@property (strong, nonatomic) NSMutableArray *books;
 
 @end
