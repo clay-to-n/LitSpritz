@@ -118,7 +118,9 @@
             [self.lastSentenceButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
             self.bookmarksButton.tintColor = [UIColor grayColor];
             self.chaptersButton.tintColor = [UIColor grayColor];
+            
         }completion:^(BOOL finished) {
+            self.chaptersButton.enabled = NO;
                     }];
     } else {
         [UIView animateWithDuration:1.0 animations:^{
@@ -128,6 +130,7 @@
             [self.lastSentenceButton setTitleColor:trojanRed forState:UIControlStateNormal];
             self.bookmarksButton.tintColor = trojanRed;
             self.chaptersButton.tintColor = trojanRed;
+            self.chaptersButton.enabled = YES;
         }completion:^(BOOL finished) {
             
         }];

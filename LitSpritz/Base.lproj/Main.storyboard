@@ -142,19 +142,13 @@
                                     <constraint firstAttribute="height" constant="44" id="UuR-Vw-qNX"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="Chapters" id="5fI-DV-c3r">
+                                    <barButtonItem title="Chapters" width="90" id="5fI-DV-c3r">
                                         <color key="tintColor" red="0.66666666669999997" green="0.0" blue="0.093632989129999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <segue destination="yhT-CD-Xc2" kind="modal" identifier="chaptersSegue" id="NjM-s4-ipA"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="VDM-yZ-IEb"/>
-                                    <barButtonItem title="Bookmarks" id="ey7-1X-m9b">
-                                        <color key="tintColor" red="0.66666666669999997" green="0.0" blue="0.093632989129999997" alpha="1" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <segue destination="uWW-A6-geF" kind="modal" id="lnz-ch-1Ab"/>
-                                        </connections>
-                                    </barButtonItem>
                                 </items>
                                 <color key="tintColor" red="0.66666666669999997" green="0.0" blue="0.093632989129999997" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
@@ -181,7 +175,6 @@
                     <navigationItem key="navigationItem" id="a2e-DJ-Vu3"/>
                     <connections>
                         <outlet property="bookTitleDisplay" destination="PUF-pP-KsB" id="Fg8-0Y-rlK"/>
-                        <outlet property="bookmarksButton" destination="ey7-1X-m9b" id="oCr-Sj-Ovc"/>
                         <outlet property="chaptersButton" destination="5fI-DV-c3r" id="8ql-8E-Mme"/>
                         <outlet property="lastSentenceButton" destination="eQS-Dp-BzC" id="VUZ-Ic-BIP"/>
                         <outlet property="navigationItem" destination="a2e-DJ-Vu3" id="uth-4E-E4Q"/>
