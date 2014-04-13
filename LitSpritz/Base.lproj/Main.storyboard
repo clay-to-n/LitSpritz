@@ -111,7 +111,7 @@
                                     <action selector="startOrStopSpritz:" destination="Z3s-T8-nhL" eventType="touchUpInside" id="PMc-wN-UwR"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="200" minValue="10" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="59a-Pk-gUa">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="200" minValue="25" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="59a-Pk-gUa">
                                 <rect key="frame" x="90" y="271" width="212" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="minimumTrackTintColor" red="0.66666666666666663" green="0.0" blue="0.093632989127563349" alpha="1" colorSpace="calibratedRGB"/>
@@ -120,7 +120,7 @@
                                 </connections>
                             </slider>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="bookTitleDisplay" text="Book Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUF-pP-KsB">
-                                <rect key="frame" x="47" y="106" width="226" height="100"/>
+                                <rect key="frame" x="47" y="43" width="226" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>

@@ -20,12 +20,18 @@
 
 @end
 
-@implementation USCBookViewController
+@implementation USCBookViewController {
+
+    BOOL isPaused;
+    
+}
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        isPaused = YES;
         // Custom initialization
     }
     return self;
@@ -40,17 +46,6 @@
         [self.spritzInlineView addSpritzControllerDelegate:self];
         
         [self.speedSlider setValue:[SpritzDataStore sharedStore].userSettings.wordsPerMinute];
-        
-        /*SpritzController *c = [self.spritzInlineView valueForKey:@"_spritzController"];
-        if (c.isPaused) {
-            
-        }*/
-        
-        // current word speed
-        //[SpritzDataStore sharedStore].userSettings.wordsPerMinute;
-        
-        // change the word speed
-        
     }
 }
 
@@ -71,15 +66,16 @@
        /* NSString *stringFromFileAtPath = [[NSString alloc]initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
         
         NSLog(@"%@", stringFromFileAtPath);*/
-        NSString *bookText = [self.book getString];
-        [self.spritzInlineView startSpritzing:bookText sourceType:SourceFlagPlain];
     
+        SpritzController *c = [self.spritzInlineView valueForKey:@"_spritzController"];
     
-    /*    SpritzViewController *spritzVC = [[SpritzViewController alloc] init];
-        [self presentViewController:spritzVC animated:YES completion:^{
-            [spritzVC startSpritzing:stringFromFileAtPath sourceType:SourceFlagPlain];
-        }];  */
-
+        if (!c.started) {
+            NSString *bookText = [self.book getString];
+            [self.spritzInlineView startSpritzing:bookText sourceType:SourceFlagPlain];
+        }
+        else {
+            [c togglePause];
+        }
 }
 
 - (IBAction)sliderValueChanged:(id)sender {
