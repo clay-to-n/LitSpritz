@@ -28,6 +28,7 @@
 @implementation USCBookViewController {
 
     BOOL isPaused;
+    BOOL reload;
     SpritzController *sc;
     UIColor* trojanRed;
     
@@ -39,6 +40,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         isPaused = YES;
+        reload = NO;
         // Custom initialization
     }
     return self;
@@ -51,7 +53,7 @@
     if (self.book) {
         [self.bookTitleDisplay setText:[self.book title]];
         [self.spritzInlineView addSpritzControllerDelegate:self];
-        
+        [self.spritzInlineView setUserInteractionEnabled:NO];
         [self.speedSlider setValue:[SpritzDataStore sharedStore].userSettings.wordsPerMinute];
         trojanRed = [self.speedSlider minimumTrackTintColor];
         self.navigationController.navigationBar.tintColor = trojanRed;
@@ -82,6 +84,15 @@
     if (!sc.started) {
         NSString *bookText = [self getStringStartingWithIndex:self.book.currentPosition];
         [self.spritzInlineView startSpritzing:bookText sourceType:SourceFlagPlain];
+    } else if (reload) {
+        [sc stop];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.3 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            NSString *bookText = [self getStringStartingWithIndex:self.book.currentPosition];
+            [self.spritzInlineView startSpritzing:bookText sourceType:SourceFlagPlain];
+        });
+        
+        
+        reload = NO;
     }
     else {
         if (isPaused)
@@ -157,6 +168,8 @@
         UINavigationController *navController = [segue destinationViewController];
         USCChaptersViewController *vc = navController.viewControllers[0];
         vc.book = self.book;
+        
+        reload = true;
         
     }
 }

@@ -74,6 +74,17 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSArray *keys = [self.book.chapterPositions allKeys];
+    keys = [keys sortedArrayUsingSelector:@selector(compare:)];
+    id aKey = [keys objectAtIndex:indexPath.row];
+    id anObject = [self.book.chapterPositions objectForKey:aKey];
+    self.book.currentPosition = [anObject intValue];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

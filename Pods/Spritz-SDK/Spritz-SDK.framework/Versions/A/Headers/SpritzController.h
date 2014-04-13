@@ -15,6 +15,8 @@
 
 @property (nonatomic, readonly, getter = hasStarted) BOOL started;
 @property (nonatomic, readonly, getter = isPaused) BOOL paused;
+@property (nonatomic, assign) int currentIndex;
+
 
 /**
  *  SpirtzController init method. It takes a SpritzView object as reticle where the text will be spritzed.

@@ -14,7 +14,7 @@
 @interface SpritzInlineView : UIView
 
 @property (nonatomic, readonly) bool isCompleted;
-
+- (void)setNeedsDisplay;
 - (void)addSpritzControllerDelegate:(id<SpritzControllerDelegate>)delegate;
 - (void)addSpritzActionSheetButtons:(NSArray *)buttons;
 
