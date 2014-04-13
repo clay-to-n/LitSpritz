@@ -17,22 +17,33 @@
 
 @end
 
-@implementation USCBookListViewController
+@implementation USCBookListViewController {
 
-NSString *persistencePath = @"LitSpritzLibrary";
+// append the filename to the documents path
+    NSString *filePath;
+
+}
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
     
     if (self) {
-        self.library = [USCBooksLibrary objectWithContentsOfFile:persistencePath];
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *documentsPath = [paths objectAtIndex:0];
+        filePath = [documentsPath stringByAppendingPathComponent:@"LitSpritzLibrary"];
+        
+        self.library = [USCBooksLibrary objectWithContentsOfFile:filePath];
         if (!self.library) {
             self.library = [[USCBooksLibrary alloc] init];
             
             USCBookModel *throughTheLookingGlass = [[USCBookModel alloc] initWithTitle:@"Through The Looking Glass" andFileName:[[NSBundle mainBundle] pathForResource:@"LewisCarrollThroughTheLookingGlass" ofType:@"txt"]];
-        
             [self.library insertBook:throughTheLookingGlass atIndex:0];
+            
+            USCBookModel *thePictureOfDorianGray = [[USCBookModel alloc] initWithTitle:@"The Picture Of Dorian Gray" andFileName:[[NSBundle mainBundle] pathForResource:@"OscarWildeThePictureOfDorianGray" ofType:@"txt"]];
+            
+            [self.library insertBook:thePictureOfDorianGray atIndex:1];
+            
             [self save];
         }
         
@@ -82,7 +93,7 @@ NSString *persistencePath = @"LitSpritzLibrary";
 }
 
 - (void) save {
-    [self.library writeToFile:persistencePath atomically:TRUE];
+    [self.library writeToFile:filePath atomically:TRUE];
 }
 
 /*

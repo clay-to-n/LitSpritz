@@ -11,6 +11,7 @@
 		0171B6E118F9E131006340A2 /* USCBookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0171B6E018F9E131006340A2 /* USCBookModel.m */; };
 		0171B6E718F9E35B006340A2 /* AutoCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 0171B6E618F9E35B006340A2 /* AutoCoding.m */; };
 		0171B6EA18F9EC03006340A2 /* LewisCarrollThroughTheLookingGlass.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0171B6E918F9EC03006340A2 /* LewisCarrollThroughTheLookingGlass.txt */; };
+		01888CD018FA4D8F00663EBE /* OscarWildeThePictureOfDorianGray.txt in Resources */ = {isa = PBXBuildFile; fileRef = 01888CCF18FA4D8F00663EBE /* OscarWildeThePictureOfDorianGray.txt */; };
 		01C7493918F980B6000D82BA /* USCBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C7493818F980B6000D82BA /* USCBookViewController.m */; };
 		01C7493C18F98462000D82BA /* USCBookListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C7493B18F98462000D82BA /* USCBookListViewController.m */; };
 		9F822A4FDBE04B42AD614B2A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F0F73F168DA48F09767ECB8 /* libPods.a */; };
@@ -32,7 +33,8 @@
 		0171B6E018F9E131006340A2 /* USCBookModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USCBookModel.m; sourceTree = "<group>"; };
 		0171B6E518F9E35B006340A2 /* AutoCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AutoCoding.h; path = Libraries/AutoCoding/AutoCoding.h; sourceTree = "<group>"; };
 		0171B6E618F9E35B006340A2 /* AutoCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AutoCoding.m; path = Libraries/AutoCoding/AutoCoding.m; sourceTree = "<group>"; };
-		0171B6E918F9EC03006340A2 /* LewisCarrollThroughTheLookingGlass.txt */ = {isa = PBXFileReference; lastKnownFileType = file; name = LewisCarrollThroughTheLookingGlass.txt; path = Books/LewisCarrollThroughTheLookingGlass.txt; sourceTree = "<group>"; };
+		0171B6E918F9EC03006340A2 /* LewisCarrollThroughTheLookingGlass.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = LewisCarrollThroughTheLookingGlass.txt; path = Books/LewisCarrollThroughTheLookingGlass.txt; sourceTree = "<group>"; };
+		01888CCF18FA4D8F00663EBE /* OscarWildeThePictureOfDorianGray.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = OscarWildeThePictureOfDorianGray.txt; path = Books/OscarWildeThePictureOfDorianGray.txt; sourceTree = "<group>"; };
 		01C7493718F980B6000D82BA /* USCBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USCBookViewController.h; sourceTree = "<group>"; };
 		01C7493818F980B6000D82BA /* USCBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USCBookViewController.m; sourceTree = "<group>"; };
 		01C7493A18F98462000D82BA /* USCBookListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USCBookListViewController.h; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 		0171B6E818F9EBE9006340A2 /* Books */ = {
 			isa = PBXGroup;
 			children = (
+				01888CCF18FA4D8F00663EBE /* OscarWildeThePictureOfDorianGray.txt */,
 				0171B6E918F9EC03006340A2 /* LewisCarrollThroughTheLookingGlass.txt */,
 			);
 			name = Books;
@@ -201,6 +204,7 @@
 				D4231DE918F66D02000BB5B3 /* InfoPlist.strings in Resources */,
 				0171B6EA18F9EC03006340A2 /* LewisCarrollThroughTheLookingGlass.txt in Resources */,
 				D4231DF218F66D02000BB5B3 /* Main.storyboard in Resources */,
+				01888CD018FA4D8F00663EBE /* OscarWildeThePictureOfDorianGray.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
