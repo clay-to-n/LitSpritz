@@ -19,10 +19,6 @@
 
 @implementation USCBooksLibrary
 
-// Keys for dictionary
-NSString *const AnswerArray = @"Answer Array";
-NSString *const SecretAnswer = @"Secret Answer";
-
 -(id) init {
     self = [super init];
     if (self) {
