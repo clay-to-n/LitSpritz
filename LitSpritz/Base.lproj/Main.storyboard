@@ -101,18 +101,26 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CkK-ql-TEd">
-                                <rect key="frame" x="20" y="271" width="53" height="33"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="whiteRectangle.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZyM-hA-diR">
+                                <rect key="frame" x="12" y="237" width="297" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CkK-ql-TEd">
+                                <rect key="frame" x="27" y="276" width="45" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.79568614130434789" green="0.79568614130434789" blue="0.79568614130434789" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Play"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="tintColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="playSmall.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <state key="selected" title="Play"/>
                                 <connections>
                                     <action selector="startOrStopSpritz:" destination="Z3s-T8-nhL" eventType="touchUpInside" id="PMc-wN-UwR"/>
                                 </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="200" minValue="25" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="59a-Pk-gUa">
-                                <rect key="frame" x="90" y="271" width="212" height="34"/>
+                                <rect key="frame" x="90" y="282" width="212" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="minimumTrackTintColor" red="0.66666666666666663" green="0.0" blue="0.093632989127563349" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -122,7 +130,7 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="bookTitleDisplay" text="Book Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUF-pP-KsB">
                                 <rect key="frame" x="47" y="43" width="226" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -134,12 +142,14 @@
                                 </constraints>
                                 <items>
                                     <barButtonItem title="Chapters" id="5fI-DV-c3r">
+                                        <color key="tintColor" red="0.66666666669999997" green="0.0" blue="0.093632989129999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <segue destination="yhT-CD-Xc2" kind="modal" identifier="chaptersSegue" id="NjM-s4-ipA"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="VDM-yZ-IEb"/>
                                     <barButtonItem title="Bookmarks" id="ey7-1X-m9b">
+                                        <color key="tintColor" red="0.66666666669999997" green="0.0" blue="0.093632989129999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <segue destination="uWW-A6-geF" kind="modal" id="lnz-ch-1Ab"/>
                                         </connections>
@@ -147,9 +157,11 @@
                                 </items>
                             </toolbar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQS-Dp-BzC">
-                                <rect key="frame" x="27" y="147" width="34" height="30"/>
+                                <rect key="frame" x="27" y="147" width="39" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="back">
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <state key="normal" title="←">
+                                    <color key="titleColor" red="0.66666666669999997" green="0.0" blue="0.093632989129999997" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -182,6 +194,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Chapters" id="LfZ-Yr-rI8">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="w9H-CQ-USA">
+                            <color key="tintColor" red="0.66666666669999997" green="0.0" blue="0.093632989129999997" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="cancel:" destination="Oi8-eM-TPf" id="uob-tT-c4S"/>
                             </connections>
@@ -202,9 +215,13 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Bookmarks" id="dKR-sU-EM7">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="CrE-qB-jPR">
+                            <color key="tintColor" red="0.66666666669999997" green="0.0" blue="0.093632989129999997" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="cancel:" destination="maK-kQ-Moe" id="62S-rQ-27R"/>
                             </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="2lb-NX-2c2">
+                            <color key="tintColor" red="0.66666666669999997" green="0.0" blue="0.093632989129999997" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -268,6 +285,10 @@
             <point key="canvasLocation" x="1360" y="1097"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="playSmall.png" width="56" height="56"/>
+        <image name="whiteRectangle.png" width="309" height="324"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

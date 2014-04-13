@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:whiteRectangle.png">
+   </FileRef>
+   <FileRef
       location = "group:LitSpritz/Books/LewisCarrollThroughTheLookingGlass.txt">
    </FileRef>
    <FileRef

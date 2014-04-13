@@ -78,6 +78,16 @@
         else {
             [sc togglePause];
         }
+    
+        // when we pause, we should switch the button icon
+        UIButton *theButton = (UIButton*)sender;
+        if (isPaused == NO) {
+            [theButton setImage:[UIImage imageNamed:@"pauseSmall.png"] forState:UIControlStateNormal];
+        } else {
+            [theButton setImage:[UIImage imageNamed:@"playSmall.png"] forState:UIControlStateNormal];
+        }
+        isPaused = !isPaused;
+    
 }
 
 - (IBAction)sliderValueChanged:(id)sender {
@@ -103,7 +113,6 @@
 - (void)onPause:(int)charPos wordPos:(int)wordPos timePos:(float)timePos speed:(int)speed {
     
     // when we pause, we must save our current position for the book
-    
     NSArray *strings = [[self.book getString] componentsSeparatedByString:@" "];
     NSUInteger sum = 0;
     for (int i =0; i < wordPos; i++) {

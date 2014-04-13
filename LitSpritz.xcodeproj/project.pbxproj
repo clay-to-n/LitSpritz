@@ -14,6 +14,9 @@
 		01888CD018FA4D8F00663EBE /* OscarWildeThePictureOfDorianGray.txt in Resources */ = {isa = PBXBuildFile; fileRef = 01888CCF18FA4D8F00663EBE /* OscarWildeThePictureOfDorianGray.txt */; };
 		01888CD318FA702F00663EBE /* USCBookmarksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01888CD218FA702F00663EBE /* USCBookmarksViewController.m */; };
 		01888CD618FA713100663EBE /* USCChaptersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01888CD518FA713100663EBE /* USCChaptersViewController.m */; };
+		01888CD918FA9BE200663EBE /* pauseSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 01888CD718FA9BE200663EBE /* pauseSmall.png */; };
+		01888CDA18FA9BE200663EBE /* playSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 01888CD818FA9BE200663EBE /* playSmall.png */; };
+		01888CDF18FA9E9200663EBE /* whiteRectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 01888CDE18FA9E9200663EBE /* whiteRectangle.png */; };
 		01C7493918F980B6000D82BA /* USCBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C7493818F980B6000D82BA /* USCBookViewController.m */; };
 		01C7493C18F98462000D82BA /* USCBookListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C7493B18F98462000D82BA /* USCBookListViewController.m */; };
 		9F822A4FDBE04B42AD614B2A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F0F73F168DA48F09767ECB8 /* libPods.a */; };
@@ -41,6 +44,9 @@
 		01888CD218FA702F00663EBE /* USCBookmarksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USCBookmarksViewController.m; sourceTree = "<group>"; };
 		01888CD418FA713100663EBE /* USCChaptersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USCChaptersViewController.h; sourceTree = "<group>"; };
 		01888CD518FA713100663EBE /* USCChaptersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USCChaptersViewController.m; sourceTree = "<group>"; };
+		01888CD718FA9BE200663EBE /* pauseSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauseSmall.png; sourceTree = "<group>"; };
+		01888CD818FA9BE200663EBE /* playSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playSmall.png; sourceTree = "<group>"; };
+		01888CDE18FA9E9200663EBE /* whiteRectangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteRectangle.png; sourceTree = "<group>"; };
 		01C7493718F980B6000D82BA /* USCBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USCBookViewController.h; sourceTree = "<group>"; };
 		01C7493818F980B6000D82BA /* USCBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USCBookViewController.m; sourceTree = "<group>"; };
 		01C7493A18F98462000D82BA /* USCBookListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USCBookListViewController.h; sourceTree = "<group>"; };
@@ -85,6 +91,16 @@
 				0171B6E918F9EC03006340A2 /* LewisCarrollThroughTheLookingGlass.txt */,
 			);
 			name = Books;
+			sourceTree = "<group>";
+		};
+		01888CDB18FA9BE700663EBE /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				01888CD718FA9BE200663EBE /* pauseSmall.png */,
+				01888CDE18FA9E9200663EBE /* whiteRectangle.png */,
+				01888CD818FA9BE200663EBE /* playSmall.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		D4231DD218F66D02000BB5B3 = {
@@ -133,6 +149,7 @@
 				D4231DF318F66D02000BB5B3 /* ViewController.h */,
 				D4231DF418F66D02000BB5B3 /* ViewController.m */,
 				0171B6E818F9EBE9006340A2 /* Books */,
+				01888CDB18FA9BE700663EBE /* Images */,
 				D4231DF618F66D02000BB5B3 /* Images.xcassets */,
 				0171B6DC18F9DD14006340A2 /* USCBooksLibrary.h */,
 				0171B6DD18F9DD14006340A2 /* USCBooksLibrary.m */,
@@ -211,7 +228,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4231DF718F66D02000BB5B3 /* Images.xcassets in Resources */,
+				01888CDA18FA9BE200663EBE /* playSmall.png in Resources */,
 				D4231DE918F66D02000BB5B3 /* InfoPlist.strings in Resources */,
+				01888CDF18FA9E9200663EBE /* whiteRectangle.png in Resources */,
+				01888CD918FA9BE200663EBE /* pauseSmall.png in Resources */,
 				0171B6EA18F9EC03006340A2 /* LewisCarrollThroughTheLookingGlass.txt in Resources */,
 				D4231DF218F66D02000BB5B3 /* Main.storyboard in Resources */,
 				01888CD018FA4D8F00663EBE /* OscarWildeThePictureOfDorianGray.txt in Resources */,
