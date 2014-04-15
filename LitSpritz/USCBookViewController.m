@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *lastSentenceButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *chaptersButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *bookmarksButton;
+@property (weak, nonatomic) IBOutlet UILabel *wpmDisplay;
 
 - (IBAction)sliderValueChanged:(id)sender;
 - (IBAction)backButtonPressed:(id)sender;
@@ -55,8 +56,10 @@
         [self.spritzInlineView addSpritzControllerDelegate:self];
         [self.spritzInlineView setUserInteractionEnabled:NO];
         [self.speedSlider setValue:[SpritzDataStore sharedStore].userSettings.wordsPerMinute];
+        [self.wpmDisplay setText: [NSString stringWithFormat:@"%d wpm", (int)self.speedSlider.value]];
         trojanRed = [self.speedSlider minimumTrackTintColor];
         self.navigationController.navigationBar.tintColor = trojanRed;
+       
 
     }
 }
@@ -103,9 +106,13 @@
     // when we pause, we should switch the button icon
     UIButton *theButton = (UIButton*)sender;
     if (isPaused == NO) {
-        [theButton setImage:[UIImage imageNamed:@"pauseSmall.png"] forState:UIControlStateNormal];
+        [theButton setTitle:@"▐ ▐" forState:UIControlStateNormal];
+        [theButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        theButton.titleLabel.font = [UIFont fontWithName:@"STHeitiTC-Light" size:26.0];
     } else {
-        [theButton setImage:[UIImage imageNamed:@"playSmall.png"] forState:UIControlStateNormal];
+        [theButton setTitle:@"▶" forState:UIControlStateNormal];
+        [theButton setTitleColor:trojanRed forState:UIControlStateNormal];
+        theButton.titleLabel.font = [UIFont fontWithName:@"STHeitiTC-Light" size:48.0];
     }
     isPaused = !isPaused;
     
@@ -113,24 +120,30 @@
     if (isPaused == YES) {
         [UIView animateWithDuration:2.4 animations:^{
             self.bookTitleDisplay.alpha = 0;
-            self.speedSlider.minimumTrackTintColor = [UIColor grayColor];
-            self.navigationController.navigationBar.tintColor =[UIColor grayColor];
+            self.wpmDisplay.alpha = 0;
+            //self.speedSlider.minimumTrackTintColor = [UIColor grayColor];
+            self.navigationController.navigationBar.tintColor = [UIColor grayColor];
             [self.lastSentenceButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-            self.bookmarksButton.tintColor = [UIColor grayColor];
+            
+            //self.bookmarksButton.tintColor = [UIColor grayColor];
             self.chaptersButton.tintColor = [UIColor grayColor];
             
         }completion:^(BOOL finished) {
             self.chaptersButton.enabled = NO;
-                    }];
+            self.lastSentenceButton.enabled = NO;
+            //self.chaptersButton.tintColor = [[UIColor grayColor] colorWithAlphaComponent:1.0];
+        }];
     } else {
         [UIView animateWithDuration:1.0 animations:^{
             self.bookTitleDisplay.alpha = 1;
+            self.wpmDisplay.alpha = 1;
             self.speedSlider.minimumTrackTintColor = trojanRed;
             self.navigationController.navigationBar.tintColor = trojanRed;
             [self.lastSentenceButton setTitleColor:trojanRed forState:UIControlStateNormal];
             self.bookmarksButton.tintColor = trojanRed;
             self.chaptersButton.tintColor = trojanRed;
             self.chaptersButton.enabled = YES;
+            self.lastSentenceButton.enabled = YES;
         }completion:^(BOOL finished) {
             
         }];
@@ -140,6 +153,7 @@
 
 - (IBAction)sliderValueChanged:(id)sender {
     [SpritzDataStore sharedStore].userSettings.wordsPerMinute = [self.speedSlider value];
+    [self.wpmDisplay setText: [NSString stringWithFormat:@"%d wpm", (int)self.speedSlider.value]];
 }
 
 - (IBAction)backButtonPressed:(id)sender {
