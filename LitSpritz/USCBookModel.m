@@ -21,6 +21,20 @@
         self.title = title;
         self.author = author;
         self.fileName = fileName;
+        self.data = nil;
+        self.currentPosition = 0;
+        self.chapterPositions = self.findChapterPositions;
+    }
+    return self;
+}
+    
+-(id) initWithTitle: (NSString *) title andAuthor: (NSString *) author andData: (NSData *) data
+{
+    if (self = [super init]) {
+        self.title = title;
+        self.author = author;
+        self.fileName = nil;
+        self.data = data;
         self.currentPosition = 0;
         self.chapterPositions = self.findChapterPositions;
     }
@@ -29,8 +43,13 @@
 
 // Returns the entire body of this book as a string
 -(NSString *) getString {
-    NSString *stringFromFileAtPath = [[NSString alloc]initWithContentsOfFile:self.fileName encoding:NSUTF8StringEncoding error:nil];
-    return stringFromFileAtPath;
+    NSString *string;
+    if (self.fileName != nil) {
+        string = [[NSString alloc]initWithContentsOfFile:self.fileName encoding:NSUTF8StringEncoding error:nil];
+    } else if (self.data != nil) {
+        string = [[NSString alloc]initWithData:self.data encoding:NSUTF8StringEncoding];
+    }
+    return string;
 }
 
 -(NSMutableDictionary *) findChapterPositions {

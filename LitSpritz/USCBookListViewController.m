@@ -14,7 +14,7 @@
 
 
 
-@interface USCBookListViewController () <USCBookViewControllerDelegate, UIActionSheetDelegate, UIAlertViewDelegate, DownloadHelperDelegate>
+@interface USCBookListViewController () <USCBookViewControllerDelegate, UIActionSheetDelegate, UIAlertViewDelegate, USCBooksLibraryDelegate>
 
 @property (strong, nonatomic) USCBooksLibrary *library;
     
@@ -44,15 +44,16 @@
             self.library = [[USCBooksLibrary alloc] init];
             
             USCBookModel *throughTheLookingGlass = [[USCBookModel alloc] initWithTitle:@"Through The Looking Glass" andAuthor: @"Lewis Carroll" andFileName:[[NSBundle mainBundle] pathForResource:@"LewisCarrollThroughTheLookingGlass" ofType:@"txt"]];
-            [self.library insertBook:throughTheLookingGlass atIndex:0];
+            [self.library insertBook:throughTheLookingGlass];
             
             USCBookModel *thePictureOfDorianGray = [[USCBookModel alloc] initWithTitle:@"The Picture Of Dorian Gray" andAuthor:@"Oscar Wilde" andFileName:[[NSBundle mainBundle] pathForResource:@"OscarWildeThePictureOfDorianGray" ofType:@"txt"]];
-            
-            [self.library insertBook:thePictureOfDorianGray atIndex:1];
+            [self.library insertBook:thePictureOfDorianGray];
             
             
             [self save];
         }
+        [self.library setDelegate:self];
+
         
     }
     
@@ -133,9 +134,10 @@
     if (buttonIndex == 1) {
         UITextField * alertTextField = [alertView textFieldAtIndex:0];
         NSString *extension = [[alertTextField.text lastPathComponent] pathExtension];
-        if ([extension isEqualToString:@"txt"] || [extension isEqualToString:@"epub"]) {
+        if ([extension isEqualToString:@"txt"] || [extension isEqualToString:@"utf-8"] || [extension isEqualToString:@"epub"]) {
             [self.library addBookFromURLString:alertTextField.text];
         } else {
+            // if they didn't supply a .txt or .epub file
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"The URL must end in .txt or .epub" delegate:self cancelButtonTitle:@"Back" otherButtonTitles:nil];
             [alert show];
         }
@@ -144,23 +146,15 @@
     // do whatever you want to do with this UITextField.
 }
     
+    
+// delegate method for uscbookslibrary
+- (void) didUpdateLibrary {
+    [self.tableView reloadData];
+    
+}
+    
 - (void) save {
     [self.library writeToFile:filePath atomically:TRUE];
-}
-
-// download helper delegate methods
-- (void) didReceiveData: (NSData *) theData {
-    
-}
-- (void) didReceiveFilename: (NSString *) aName {
-    
-}
-- (void) dataDownloadFailed: (NSString *) reason {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:reason delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
-    [alert show];
-}
-- (void) dataDownloadAtPercent: (NSNumber *) aPercent {
-    
 }
 
     

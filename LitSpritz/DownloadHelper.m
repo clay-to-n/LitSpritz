@@ -120,6 +120,7 @@ static DownloadHelper *sharedInstance = nil;
         self.isDownloading = NO;
         NSLog(@"Error: Failed connection, %@", [error localizedDescription]);
         DELEGATE_CALLBACK(dataDownloadFailed:, @"Failed Connection");
+
         [self cleanup];
     }
     
