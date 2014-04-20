@@ -3,7 +3,7 @@
 //  LitSpritz
 //
 //  Created by Clayton on 4/13/14.
-//  Copyright (c) 2014 Spritz. All rights reserved.
+//  Copyright (c) 2014 Clayton Brand. All rights reserved.
 //
 
 #import "USCBookmarksViewController.h"

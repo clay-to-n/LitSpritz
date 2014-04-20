@@ -2,8 +2,10 @@
 //  DownloadHelper.h
 //  LitSpritz
 //
-//  Created by Clayton on 4/19/14.
-//  Copyright (c) 2014 Clayton Brand. All rights reserved.
+//  This class created by:
+//  Erica Sadun, http://ericasadun.com
+//  iPhone Developer's Cookbook, 5.0 Edition
+//  BSD License, Use at your own risk
 //
 
 @protocol DownloadHelperDelegate <NSObject>

@@ -15,6 +15,11 @@
 		01888CD618FA713100663EBE /* USCChaptersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01888CD518FA713100663EBE /* USCChaptersViewController.m */; };
 		01888CDF18FA9E9200663EBE /* whiteRectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 01888CDE18FA9E9200663EBE /* whiteRectangle.png */; };
 		01BA48E31903733600348DBD /* DownloadHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BA48E21903733600348DBD /* DownloadHelper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		01BA48F21904732900348DBD /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 01BA48E81904732900348DBD /* ioapi.c */; };
+		01BA48F31904732900348DBD /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 01BA48EA1904732900348DBD /* mztools.c */; };
+		01BA48F41904732900348DBD /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 01BA48EC1904732900348DBD /* unzip.c */; };
+		01BA48F51904732900348DBD /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 01BA48EE1904732900348DBD /* zip.c */; };
+		01BA48F61904732900348DBD /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = 01BA48F11904732900348DBD /* ZipArchive.mm */; };
 		01C7493918F980B6000D82BA /* USCBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C7493818F980B6000D82BA /* USCBookViewController.m */; };
 		01C7493C18F98462000D82BA /* USCBookListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C7493B18F98462000D82BA /* USCBookListViewController.m */; };
 		01FB30A219034D8F0065E735 /* LewisCarrollThroughTheLookingGlass.txt in Resources */ = {isa = PBXBuildFile; fileRef = 01FB30A119034D8F0065E735 /* LewisCarrollThroughTheLookingGlass.txt */; };
@@ -44,6 +49,17 @@
 		01888CDE18FA9E9200663EBE /* whiteRectangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteRectangle.png; sourceTree = "<group>"; };
 		01BA48E11903733600348DBD /* DownloadHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadHelper.h; sourceTree = "<group>"; };
 		01BA48E21903733600348DBD /* DownloadHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadHelper.m; sourceTree = "<group>"; };
+		01BA48E71904732900348DBD /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
+		01BA48E81904732900348DBD /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
+		01BA48E91904732900348DBD /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
+		01BA48EA1904732900348DBD /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mztools.c; sourceTree = "<group>"; };
+		01BA48EB1904732900348DBD /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mztools.h; sourceTree = "<group>"; };
+		01BA48EC1904732900348DBD /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
+		01BA48ED1904732900348DBD /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
+		01BA48EE1904732900348DBD /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
+		01BA48EF1904732900348DBD /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
+		01BA48F01904732900348DBD /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
+		01BA48F11904732900348DBD /* ZipArchive.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZipArchive.mm; sourceTree = "<group>"; };
 		01C7493718F980B6000D82BA /* USCBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USCBookViewController.h; sourceTree = "<group>"; };
 		01C7493818F980B6000D82BA /* USCBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USCBookViewController.m; sourceTree = "<group>"; };
 		01C7493A18F98462000D82BA /* USCBookListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USCBookListViewController.h; sourceTree = "<group>"; };
@@ -97,6 +113,32 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		01BA48E51904732900348DBD /* ZipArchive */ = {
+			isa = PBXGroup;
+			children = (
+				01BA48E61904732900348DBD /* minizip */,
+				01BA48F01904732900348DBD /* ZipArchive.h */,
+				01BA48F11904732900348DBD /* ZipArchive.mm */,
+			);
+			path = ZipArchive;
+			sourceTree = "<group>";
+		};
+		01BA48E61904732900348DBD /* minizip */ = {
+			isa = PBXGroup;
+			children = (
+				01BA48E71904732900348DBD /* crypt.h */,
+				01BA48E81904732900348DBD /* ioapi.c */,
+				01BA48E91904732900348DBD /* ioapi.h */,
+				01BA48EA1904732900348DBD /* mztools.c */,
+				01BA48EB1904732900348DBD /* mztools.h */,
+				01BA48EC1904732900348DBD /* unzip.c */,
+				01BA48ED1904732900348DBD /* unzip.h */,
+				01BA48EE1904732900348DBD /* zip.c */,
+				01BA48EF1904732900348DBD /* zip.h */,
+			);
+			path = minizip;
+			sourceTree = "<group>";
+		};
 		D4231DD218F66D02000BB5B3 = {
 			isa = PBXGroup;
 			children = (
@@ -145,8 +187,6 @@
 				D4231DF618F66D02000BB5B3 /* Images.xcassets */,
 				0171B6DC18F9DD14006340A2 /* USCBooksLibrary.h */,
 				0171B6DD18F9DD14006340A2 /* USCBooksLibrary.m */,
-				0171B6DF18F9E131006340A2 /* USCBookModel.h */,
-				0171B6E018F9E131006340A2 /* USCBookModel.m */,
 				D4231DE518F66D02000BB5B3 /* Supporting Files */,
 			);
 			path = LitSpritz;
@@ -155,6 +195,9 @@
 		D4231DE518F66D02000BB5B3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				01BA48E51904732900348DBD /* ZipArchive */,
+				0171B6DF18F9E131006340A2 /* USCBookModel.h */,
+				0171B6E018F9E131006340A2 /* USCBookModel.m */,
 				01BA48E11903733600348DBD /* DownloadHelper.h */,
 				01BA48E21903733600348DBD /* DownloadHelper.m */,
 				0171B6E518F9E35B006340A2 /* AutoCoding.h */,
@@ -272,12 +315,17 @@
 			files = (
 				0171B6DE18F9DD14006340A2 /* USCBooksLibrary.m in Sources */,
 				01C7493C18F98462000D82BA /* USCBookListViewController.m in Sources */,
+				01BA48F31904732900348DBD /* mztools.c in Sources */,
 				D4231DEF18F66D02000BB5B3 /* AppDelegate.m in Sources */,
+				01BA48F61904732900348DBD /* ZipArchive.mm in Sources */,
+				01BA48F41904732900348DBD /* unzip.c in Sources */,
 				0171B6E718F9E35B006340A2 /* AutoCoding.m in Sources */,
 				0171B6E118F9E131006340A2 /* USCBookModel.m in Sources */,
 				01888CD618FA713100663EBE /* USCChaptersViewController.m in Sources */,
 				D4231DEB18F66D02000BB5B3 /* main.m in Sources */,
 				01C7493918F980B6000D82BA /* USCBookViewController.m in Sources */,
+				01BA48F21904732900348DBD /* ioapi.c in Sources */,
+				01BA48F51904732900348DBD /* zip.c in Sources */,
 				01888CD318FA702F00663EBE /* USCBookmarksViewController.m in Sources */,
 				01BA48E31903733600348DBD /* DownloadHelper.m in Sources */,
 			);

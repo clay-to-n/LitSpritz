@@ -3,7 +3,7 @@
 //  LitSpritz
 //
 //  Created by Clayton on 4/12/14.
-//  Copyright (c) 2014 Spritz. All rights reserved.
+//  Copyright (c) 2014 Clayton Brand. All rights reserved.
 //
 
 #import "USCBooksLibrary.h"
@@ -54,6 +54,10 @@
     
     NSString *extension = [[bookURLString lastPathComponent] pathExtension];
     if ([extension isEqualToString:@"txt"] || [extension isEqualToString:@"utf-8"]) {
+        self.downloadHelper = [DownloadHelper sharedInstance];
+        [DownloadHelper download:bookURLString];
+        self.downloadHelper.delegate = self;
+    } else if ([extension isEqualToString:@"epub"]) {
         self.downloadHelper = [DownloadHelper sharedInstance];
         [DownloadHelper download:bookURLString];
         self.downloadHelper.delegate = self;
