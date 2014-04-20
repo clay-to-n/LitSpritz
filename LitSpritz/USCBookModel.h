@@ -17,6 +17,7 @@
 @property (assign, nonatomic) int currentPosition;
 @property (strong, nonatomic) NSMutableDictionary *chapterPositions;
 @property (strong, nonatomic) NSDate *lastRead;
+@property (strong, nonatomic) NSString *fileFormat;
 
 -(id) initWithTitle: (NSString *) title andAuthor: (NSString *) author andFileName: (NSString *) fileName;
 -(NSString *) getString;

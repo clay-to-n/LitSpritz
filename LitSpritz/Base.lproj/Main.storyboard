@@ -95,7 +95,9 @@
                             <outlet property="delegate" destination="T3z-vx-hBB" id="pCN-Qb-5yW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Library" id="d58-Ww-GGt"/>
+                    <navigationItem key="navigationItem" title="Library" id="d58-Ww-GGt">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="tNf-tT-vtN"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y1R-xP-bgb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

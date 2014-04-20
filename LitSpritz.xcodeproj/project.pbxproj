@@ -10,15 +10,14 @@
 		0171B6DE18F9DD14006340A2 /* USCBooksLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 0171B6DD18F9DD14006340A2 /* USCBooksLibrary.m */; };
 		0171B6E118F9E131006340A2 /* USCBookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0171B6E018F9E131006340A2 /* USCBookModel.m */; };
 		0171B6E718F9E35B006340A2 /* AutoCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 0171B6E618F9E35B006340A2 /* AutoCoding.m */; };
-		0171B6EA18F9EC03006340A2 /* LewisCarrollThroughTheLookingGlass.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0171B6E918F9EC03006340A2 /* LewisCarrollThroughTheLookingGlass.txt */; };
 		01888CD018FA4D8F00663EBE /* OscarWildeThePictureOfDorianGray.txt in Resources */ = {isa = PBXBuildFile; fileRef = 01888CCF18FA4D8F00663EBE /* OscarWildeThePictureOfDorianGray.txt */; };
 		01888CD318FA702F00663EBE /* USCBookmarksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01888CD218FA702F00663EBE /* USCBookmarksViewController.m */; };
 		01888CD618FA713100663EBE /* USCChaptersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01888CD518FA713100663EBE /* USCChaptersViewController.m */; };
-		01888CD918FA9BE200663EBE /* pauseSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 01888CD718FA9BE200663EBE /* pauseSmall.png */; };
-		01888CDA18FA9BE200663EBE /* playSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 01888CD818FA9BE200663EBE /* playSmall.png */; };
 		01888CDF18FA9E9200663EBE /* whiteRectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 01888CDE18FA9E9200663EBE /* whiteRectangle.png */; };
+		01BA48E31903733600348DBD /* DownloadHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BA48E21903733600348DBD /* DownloadHelper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		01C7493918F980B6000D82BA /* USCBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C7493818F980B6000D82BA /* USCBookViewController.m */; };
 		01C7493C18F98462000D82BA /* USCBookListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C7493B18F98462000D82BA /* USCBookListViewController.m */; };
+		01FB30A219034D8F0065E735 /* LewisCarrollThroughTheLookingGlass.txt in Resources */ = {isa = PBXBuildFile; fileRef = 01FB30A119034D8F0065E735 /* LewisCarrollThroughTheLookingGlass.txt */; };
 		9F822A4FDBE04B42AD614B2A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F0F73F168DA48F09767ECB8 /* libPods.a */; };
 		D4231DDF18F66D02000BB5B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4231DDE18F66D02000BB5B3 /* Foundation.framework */; };
 		D4231DE118F66D02000BB5B3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4231DE018F66D02000BB5B3 /* CoreGraphics.framework */; };
@@ -38,19 +37,19 @@
 		0171B6E018F9E131006340A2 /* USCBookModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USCBookModel.m; sourceTree = "<group>"; };
 		0171B6E518F9E35B006340A2 /* AutoCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AutoCoding.h; path = Libraries/AutoCoding/AutoCoding.h; sourceTree = "<group>"; };
 		0171B6E618F9E35B006340A2 /* AutoCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AutoCoding.m; path = Libraries/AutoCoding/AutoCoding.m; sourceTree = "<group>"; };
-		0171B6E918F9EC03006340A2 /* LewisCarrollThroughTheLookingGlass.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = LewisCarrollThroughTheLookingGlass.txt; path = Books/LewisCarrollThroughTheLookingGlass.txt; sourceTree = "<group>"; };
 		01888CCF18FA4D8F00663EBE /* OscarWildeThePictureOfDorianGray.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = OscarWildeThePictureOfDorianGray.txt; path = Books/OscarWildeThePictureOfDorianGray.txt; sourceTree = "<group>"; };
 		01888CD118FA702F00663EBE /* USCBookmarksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USCBookmarksViewController.h; sourceTree = "<group>"; };
 		01888CD218FA702F00663EBE /* USCBookmarksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USCBookmarksViewController.m; sourceTree = "<group>"; };
 		01888CD418FA713100663EBE /* USCChaptersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USCChaptersViewController.h; sourceTree = "<group>"; };
 		01888CD518FA713100663EBE /* USCChaptersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USCChaptersViewController.m; sourceTree = "<group>"; };
-		01888CD718FA9BE200663EBE /* pauseSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauseSmall.png; sourceTree = "<group>"; };
-		01888CD818FA9BE200663EBE /* playSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playSmall.png; sourceTree = "<group>"; };
 		01888CDE18FA9E9200663EBE /* whiteRectangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteRectangle.png; sourceTree = "<group>"; };
+		01BA48E11903733600348DBD /* DownloadHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadHelper.h; sourceTree = "<group>"; };
+		01BA48E21903733600348DBD /* DownloadHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadHelper.m; sourceTree = "<group>"; };
 		01C7493718F980B6000D82BA /* USCBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USCBookViewController.h; sourceTree = "<group>"; };
 		01C7493818F980B6000D82BA /* USCBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USCBookViewController.m; sourceTree = "<group>"; };
 		01C7493A18F98462000D82BA /* USCBookListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USCBookListViewController.h; sourceTree = "<group>"; };
 		01C7493B18F98462000D82BA /* USCBookListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USCBookListViewController.m; sourceTree = "<group>"; };
+		01FB30A119034D8F0065E735 /* LewisCarrollThroughTheLookingGlass.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LewisCarrollThroughTheLookingGlass.txt; path = Books/LewisCarrollThroughTheLookingGlass.txt; sourceTree = "<group>"; };
 		1280C2FDF5384C16BFBA36DA /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		1F0F73F168DA48F09767ECB8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4231DDB18F66D02000BB5B3 /* LitSpritz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LitSpritz.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,7 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				01888CCF18FA4D8F00663EBE /* OscarWildeThePictureOfDorianGray.txt */,
-				0171B6E918F9EC03006340A2 /* LewisCarrollThroughTheLookingGlass.txt */,
+				01FB30A119034D8F0065E735 /* LewisCarrollThroughTheLookingGlass.txt */,
 			);
 			name = Books;
 			sourceTree = "<group>";
@@ -96,9 +95,7 @@
 		01888CDB18FA9BE700663EBE /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				01888CD718FA9BE200663EBE /* pauseSmall.png */,
 				01888CDE18FA9E9200663EBE /* whiteRectangle.png */,
-				01888CD818FA9BE200663EBE /* playSmall.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -163,6 +160,8 @@
 		D4231DE518F66D02000BB5B3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				01BA48E11903733600348DBD /* DownloadHelper.h */,
+				01BA48E21903733600348DBD /* DownloadHelper.m */,
 				0171B6E518F9E35B006340A2 /* AutoCoding.h */,
 				0171B6E618F9E35B006340A2 /* AutoCoding.m */,
 				D4231DE618F66D02000BB5B3 /* LitSpritz-Info.plist */,
@@ -228,11 +227,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4231DF718F66D02000BB5B3 /* Images.xcassets in Resources */,
-				01888CDA18FA9BE200663EBE /* playSmall.png in Resources */,
 				D4231DE918F66D02000BB5B3 /* InfoPlist.strings in Resources */,
+				01FB30A219034D8F0065E735 /* LewisCarrollThroughTheLookingGlass.txt in Resources */,
 				01888CDF18FA9E9200663EBE /* whiteRectangle.png in Resources */,
-				01888CD918FA9BE200663EBE /* pauseSmall.png in Resources */,
-				0171B6EA18F9EC03006340A2 /* LewisCarrollThroughTheLookingGlass.txt in Resources */,
 				D4231DF218F66D02000BB5B3 /* Main.storyboard in Resources */,
 				01888CD018FA4D8F00663EBE /* OscarWildeThePictureOfDorianGray.txt in Resources */,
 			);
@@ -288,6 +285,7 @@
 				D4231DEB18F66D02000BB5B3 /* main.m in Sources */,
 				01C7493918F980B6000D82BA /* USCBookViewController.m in Sources */,
 				01888CD318FA702F00663EBE /* USCBookmarksViewController.m in Sources */,
+				01BA48E31903733600348DBD /* DownloadHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
