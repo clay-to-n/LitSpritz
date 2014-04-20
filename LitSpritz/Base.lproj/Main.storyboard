@@ -96,7 +96,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Library" id="d58-Ww-GGt">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="tNf-tT-vtN"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="tNf-tT-vtN">
+                            <color key="tintColor" red="0.66666666669999997" green="0.0" blue="0.093632989129999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="addButtonPressed:" destination="T3z-vx-hBB" id="WAZ-OI-7sI"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y1R-xP-bgb" userLabel="First Responder" sceneMemberID="firstResponder"/>

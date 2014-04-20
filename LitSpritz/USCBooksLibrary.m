@@ -7,9 +7,11 @@
 //
 
 #import "USCBooksLibrary.h"
+#import "DownloadHelper.h"
 
-@interface USCBooksLibrary ()
+@interface USCBooksLibrary () <DownloadHelperDelegate>
 
+@property (strong, nonatomic) DownloadHelper *downloadHelper;
 @property (strong, nonatomic) NSMutableArray *books;
 
 @property (strong, nonatomic) NSString *filepath;
@@ -23,6 +25,8 @@
     self = [super init];
     if (self) {
         self.books = [[NSMutableArray alloc] init];
+        self.downloadHelper = [DownloadHelper sharedInstance];
+
     }
     return self;
 }
@@ -43,6 +47,14 @@
 - (void) insertBook: (USCBookModel *) book atIndex: (NSUInteger) index {
     [self.books insertObject:book atIndex:index];
     return;
+}
+    
+- (void) addBookFromURLString: (NSString *) bookURLString {
+    
+    NSString *extension = [[bookURLString lastPathComponent] pathExtension];
+    if ([extension isEqualToString:@"txt"]) {
+        [DownloadHelper download:bookURLString];
+    }
 }
 
 

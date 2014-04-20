@@ -26,7 +26,6 @@
 		D4231DEB18F66D02000BB5B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D4231DEA18F66D02000BB5B3 /* main.m */; };
 		D4231DEF18F66D02000BB5B3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D4231DEE18F66D02000BB5B3 /* AppDelegate.m */; };
 		D4231DF218F66D02000BB5B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4231DF018F66D02000BB5B3 /* Main.storyboard */; };
-		D4231DF518F66D02000BB5B3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4231DF418F66D02000BB5B3 /* ViewController.m */; };
 		D4231DF718F66D02000BB5B3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4231DF618F66D02000BB5B3 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -63,8 +62,6 @@
 		D4231DED18F66D02000BB5B3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D4231DEE18F66D02000BB5B3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D4231DF118F66D02000BB5B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D4231DF318F66D02000BB5B3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D4231DF418F66D02000BB5B3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D4231DF618F66D02000BB5B3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,8 +140,6 @@
 				01888CD218FA702F00663EBE /* USCBookmarksViewController.m */,
 				01888CD418FA713100663EBE /* USCChaptersViewController.h */,
 				01888CD518FA713100663EBE /* USCChaptersViewController.m */,
-				D4231DF318F66D02000BB5B3 /* ViewController.h */,
-				D4231DF418F66D02000BB5B3 /* ViewController.m */,
 				0171B6E818F9EBE9006340A2 /* Books */,
 				01888CDB18FA9BE700663EBE /* Images */,
 				D4231DF618F66D02000BB5B3 /* Images.xcassets */,
@@ -276,7 +271,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0171B6DE18F9DD14006340A2 /* USCBooksLibrary.m in Sources */,
-				D4231DF518F66D02000BB5B3 /* ViewController.m in Sources */,
 				01C7493C18F98462000D82BA /* USCBookListViewController.m in Sources */,
 				D4231DEF18F66D02000BB5B3 /* AppDelegate.m in Sources */,
 				0171B6E718F9E35B006340A2 /* AutoCoding.m in Sources */,

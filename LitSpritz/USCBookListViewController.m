@@ -10,18 +10,21 @@
 #import "USCBookViewController.h"
 #import "AutoCoding.h"
 #import "USCBooksLibrary.h"
+#import "DownloadHelper.h"
 
 
 
-@interface USCBookListViewController () <USCBookViewControllerDelegate>
+@interface USCBookListViewController () <USCBookViewControllerDelegate, UIActionSheetDelegate, UIAlertViewDelegate, DownloadHelperDelegate>
 
 @property (strong, nonatomic) USCBooksLibrary *library;
+    
+- (IBAction)addButtonPressed:(id)sender;
 
 @end
 
 @implementation USCBookListViewController {
 
-// append the filename to the documents path
+    // append the filename to the documents path
     NSString *filePath;
 
 }
@@ -36,7 +39,8 @@
         filePath = [documentsPath stringByAppendingPathComponent:@"LitSpritzLibrary"];
         
         self.library = [USCBooksLibrary objectWithContentsOfFile:filePath];
-        //if (!self.library) {
+        
+        if (!self.library) {
             self.library = [[USCBooksLibrary alloc] init];
             
             USCBookModel *throughTheLookingGlass = [[USCBookModel alloc] initWithTitle:@"Through The Looking Glass" andAuthor: @"Lewis Carroll" andFileName:[[NSBundle mainBundle] pathForResource:@"LewisCarrollThroughTheLookingGlass" ofType:@"txt"]];
@@ -48,7 +52,7 @@
             
             
             [self save];
-        //}
+        }
         
     }
     
@@ -62,7 +66,6 @@
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -96,9 +99,73 @@
     return cell;
 }
 
+- (IBAction)addButtonPressed:(id)sender {
+    // Create the action sheet for adding books
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil
+                                              delegate:self
+                                     cancelButtonTitle:@"Cancel"
+                                destructiveButtonTitle:nil
+                                     otherButtonTitles:@"From URL", @"From Dropbox", @"From Google Drive", nil];
+    [actionSheet showInView:self.view];
+
+}
+
+// This action sheet appears when the click the Add button
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {  // URL
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Please enter a URL:" message:@".epub and .txt formats accepted" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Add", nil];
+        alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
+        [alertView show];
+        
+    }
+    else if (buttonIndex == 1) { // Dropbox
+        
+    }
+    else if (buttonIndex == 2) { // Google Drive
+        
+    }
+}
+   
+// This is the method called when they enter a URL
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+    if (buttonIndex == 1) {
+        UITextField * alertTextField = [alertView textFieldAtIndex:0];
+        NSString *extension = [[alertTextField.text lastPathComponent] pathExtension];
+        if ([extension isEqualToString:@"txt"] || [extension isEqualToString:@"epub"]) {
+            [self.library addBookFromURLString:alertTextField.text];
+        } else {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"The URL must end in .txt or .epub" delegate:self cancelButtonTitle:@"Back" otherButtonTitles:nil];
+            [alert show];
+        }
+    }
+    
+    // do whatever you want to do with this UITextField.
+}
+    
 - (void) save {
     [self.library writeToFile:filePath atomically:TRUE];
 }
+
+// download helper delegate methods
+- (void) didReceiveData: (NSData *) theData {
+    
+}
+- (void) didReceiveFilename: (NSString *) aName {
+    
+}
+- (void) dataDownloadFailed: (NSString *) reason {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:reason delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+    [alert show];
+}
+- (void) dataDownloadAtPercent: (NSNumber *) aPercent {
+    
+}
+
+    
+
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -169,6 +236,5 @@
 - (void) onPauseDelegation{
     [self save];
 }
-
 
 @end

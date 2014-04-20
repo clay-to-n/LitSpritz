@@ -15,6 +15,7 @@
 - (USCBookModel *) bookAtIndex: (NSUInteger) index;
 - (void) removeBookAtIndex: (NSUInteger) index;
 - (void) insertBook: (USCBookModel *) book atIndex: (NSUInteger) index;
+- (void) addBookFromURLString: (NSString *) bookURLString;
 
 @end
 
