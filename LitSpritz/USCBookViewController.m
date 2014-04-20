@@ -14,6 +14,7 @@
 @interface USCBookViewController () <SpritzControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *bookTitleDisplay;
+@property (weak, nonatomic) IBOutlet UILabel *bookAuthorDisplay;
 @property (weak, nonatomic) IBOutlet SpritzInlineView *spritzInlineView;
 @property (weak, nonatomic) IBOutlet UISlider *speedSlider;
 @property (weak, nonatomic) IBOutlet UIButton *lastSentenceButton;
@@ -53,12 +54,16 @@
 	// Do any additional setup after loading the view.
     if (self.book) {
         [self.bookTitleDisplay setText:[self.book title]];
+        [self.bookTitleDisplay sizeToFit];
+        [self.bookAuthorDisplay setText:[self.book author]];
+        [self.bookAuthorDisplay sizeToFit];
         [self.spritzInlineView addSpritzControllerDelegate:self];
         [self.spritzInlineView setUserInteractionEnabled:NO];
         [self.speedSlider setValue:[SpritzDataStore sharedStore].userSettings.wordsPerMinute];
         [self.wpmDisplay setText: [NSString stringWithFormat:@"%d wpm", (int)self.speedSlider.value]];
         trojanRed = [self.speedSlider minimumTrackTintColor];
         self.navigationController.navigationBar.tintColor = trojanRed;
+
        
 
     }
@@ -120,30 +125,36 @@
     if (isPaused == YES) {
         [UIView animateWithDuration:2.4 animations:^{
             self.bookTitleDisplay.alpha = 0;
+            self.bookAuthorDisplay.alpha = 0;
             self.wpmDisplay.alpha = 0;
             //self.speedSlider.minimumTrackTintColor = [UIColor grayColor];
             self.navigationController.navigationBar.tintColor = [UIColor grayColor];
             [self.lastSentenceButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
             
-            //self.bookmarksButton.tintColor = [UIColor grayColor];
-            self.chaptersButton.tintColor = [UIColor grayColor];
+            //self.chaptersButton.tintColor = [UIColor grayColor];
+            self.chaptersButton.enabled = NO;
+            self.bookmarksButton.enabled = NO;
+            self.lastSentenceButton.enabled = NO;
             
         }completion:^(BOOL finished) {
-            self.chaptersButton.enabled = NO;
-            self.lastSentenceButton.enabled = NO;
+            
+            
             //self.chaptersButton.tintColor = [[UIColor grayColor] colorWithAlphaComponent:1.0];
         }];
     } else {
+        
+        // When we pause, bring the colors back
         [UIView animateWithDuration:1.0 animations:^{
             self.bookTitleDisplay.alpha = 1;
+            self.bookAuthorDisplay.alpha = 1;
             self.wpmDisplay.alpha = 1;
             self.speedSlider.minimumTrackTintColor = trojanRed;
             self.navigationController.navigationBar.tintColor = trojanRed;
             [self.lastSentenceButton setTitleColor:trojanRed forState:UIControlStateNormal];
-            self.bookmarksButton.tintColor = trojanRed;
-            self.chaptersButton.tintColor = trojanRed;
             self.chaptersButton.enabled = YES;
             self.lastSentenceButton.enabled = YES;
+            self.bookmarksButton.enabled = YES;
+            
         }completion:^(BOOL finished) {
             
         }];

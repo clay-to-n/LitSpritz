@@ -12,11 +12,12 @@
 
 @property (assign, nonatomic) int id;
 @property (strong, nonatomic) NSString *title;
+@property (strong, nonatomic) NSString *author;
 @property (strong, nonatomic) NSString *fileName;
 @property (assign, nonatomic) int currentPosition;
 @property (strong, nonatomic) NSMutableDictionary *chapterPositions;
 @property (strong, nonatomic) NSDate *lastRead;
 
--(id) initWithTitle: (NSString *) title andFileName: (NSString *) fileName;
+-(id) initWithTitle: (NSString *) title andAuthor: (NSString *) author andFileName: (NSString *) fileName;
 -(NSString *) getString;
 @end

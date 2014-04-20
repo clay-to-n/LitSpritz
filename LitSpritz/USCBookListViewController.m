@@ -36,19 +36,19 @@
         filePath = [documentsPath stringByAppendingPathComponent:@"LitSpritzLibrary"];
         
         self.library = [USCBooksLibrary objectWithContentsOfFile:filePath];
-        if (!self.library) {
+        //if (!self.library) {
             self.library = [[USCBooksLibrary alloc] init];
             
-            USCBookModel *throughTheLookingGlass = [[USCBookModel alloc] initWithTitle:@"Through The Looking Glass" andFileName:[[NSBundle mainBundle] pathForResource:@"LewisCarrollThroughTheLookingGlass" ofType:@"txt"]];
+            USCBookModel *throughTheLookingGlass = [[USCBookModel alloc] initWithTitle:@"Through The Looking Glass" andAuthor: @"Lewis Carroll" andFileName:[[NSBundle mainBundle] pathForResource:@"LewisCarrollThroughTheLookingGlass" ofType:@"txt"]];
             [self.library insertBook:throughTheLookingGlass atIndex:0];
             
-            USCBookModel *thePictureOfDorianGray = [[USCBookModel alloc] initWithTitle:@"The Picture Of Dorian Gray" andFileName:[[NSBundle mainBundle] pathForResource:@"OscarWildeThePictureOfDorianGray" ofType:@"txt"]];
+            USCBookModel *thePictureOfDorianGray = [[USCBookModel alloc] initWithTitle:@"The Picture Of Dorian Gray" andAuthor:@"Oscar Wilde" andFileName:[[NSBundle mainBundle] pathForResource:@"OscarWildeThePictureOfDorianGray" ofType:@"txt"]];
             
             [self.library insertBook:thePictureOfDorianGray atIndex:1];
             
             
             [self save];
-        }
+        //}
         
     }
     
@@ -90,6 +90,8 @@
     // Configure the cell...
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BookCell" forIndexPath:indexPath];
     cell.textLabel.text = [[self.library bookAtIndex:indexPath.row] title];
+    cell.detailTextLabel.text = [[self.library bookAtIndex:indexPath.row] author];
+    //cell.detailTextLabel.text = @"Weee";
     
     return cell;
 }

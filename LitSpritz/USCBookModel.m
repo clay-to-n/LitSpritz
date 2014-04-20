@@ -16,9 +16,10 @@
 
 @implementation USCBookModel
 
--(id) initWithTitle: (NSString *) title andFileName: (NSString *) fileName {
+-(id) initWithTitle: (NSString *) title andAuthor: (NSString *) author andFileName: (NSString *) fileName {
     if (self = [super init]) {
         self.title = title;
+        self.author = author;
         self.fileName = fileName;
         self.currentPosition = 0;
         self.chapterPositions = self.findChapterPositions;
